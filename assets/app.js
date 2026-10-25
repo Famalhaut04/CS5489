@@ -75,7 +75,8 @@
       meta.appendChild(hash);
     }
     if (Array.isArray(item.source_urls) && item.source_urls.length) {
-      const source = link('Canvas 来源（需课程权限）', item.source_urls[0], 'source-link');
+      const sourceLabel = item.source_type === 'external_original' ? '原始来源' : 'Canvas 来源（需课程权限）';
+      const source = link(sourceLabel, item.source_urls[0], 'source-link');
       if (source) meta.appendChild(source);
     }
     body.appendChild(meta);
@@ -139,7 +140,7 @@
   function setup(data) {
     if (!data || !Array.isArray(data.items) || !Array.isArray(data.courses)) throw new Error('资料目录格式无效');
     catalog = data;
-    entries = data.items.filter(i => i && (!exams || Object.hasOwn(examLabels, i.exam_type)));
+    entries = data.items.filter(i => i && i.review_status === 'verified' && (!exams || Object.hasOwn(examLabels, i.exam_type)));
     const single = typeof data.course === 'string' ? data.course : data.course && data.course.code;
     $('page-title').textContent = exams ? (single ? single + ' · 历年试题' : '历年期中与期末试题') : data.title || (single ? single + ' 课程资料' : '课程资料馆');
     document.title = $('page-title').textContent + ' · CityU';
