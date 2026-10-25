@@ -1,0 +1,9 @@
+.local/
+TASK.md
+__pycache__/
+.env*
+*.pem
+*.key
+*.p12
+*.pfx
+.canvas-hub/

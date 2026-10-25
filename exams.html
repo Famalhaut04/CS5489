@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="独立查找 CityU 历年期中与期末试题，按课程、考试年份和试题类型筛选。">
+  <title>历年试题 · CityU 课程资料馆</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body data-view="exams">
+  <a class="skip-link" href="#library">跳到试题列表</a>
+  <header class="topbar"><div class="shell bar-inner"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">C</span><span>CityU <strong>课程资料馆</strong></span></a><nav aria-label="主要导航"><a class="nav-link" href="index.html">课程资料</a><a class="nav-link active" href="exams.html" aria-current="page">历年试题</a><a id="hub-link" class="nav-link" hidden>全部课程</a><a id="repo-link" class="nav-link" hidden>GitHub ↗</a></nav></div></header>
+  <main class="shell">
+    <section class="hero"><p class="eyebrow">EXAM ARCHIVE · 从往年试题开始复习</p><h1 id="page-title">历年期中与期末试题</h1><p class="hero-copy">按课程与考试年份查找。真题、样题与模拟练习，清楚区分。</p><div class="hero-meta"><span id="summary">正在读取试题目录…</span><span id="updated"></span></div></section>
+    <aside class="notice"><span class="notice-icon" aria-hidden="true">i</span><p>默认仅显示已标记的<strong>期中、期末试题</strong>。模拟题、样题和考试通知单独分类；年份缺少证据时显示“待确认”，不会猜测年份。尚未收录不代表该课程没有历年题。</p></aside>
+    <section id="library" aria-labelledby="library-heading"><div class="section-heading"><h2 id="library-heading">试题目录</h2><a class="text-link" href="index.html">返回课程资料 →</a></div>
+      <form id="filters" class="filters exam-filters" role="search"><label class="search-field">搜索试题<input id="search" type="search" placeholder="搜索试题名称、主题或课程代码" autocomplete="off"></label><label id="course-filter">课程<select id="course"><option value="">全部课程</option></select></label><label>试题类型<select id="exam-type"><option value="papers">期中与期末试题</option><option value="midterm">期中试题</option><option value="final">期末试题</option><option value="mock">模拟题</option><option value="sample">样题</option><option value="notice">考试通知</option><option value="all">全部考试资料</option></select></label><label>考试年份<select id="exam-year"><option value="">全部年份</option></select></label></form>
+      <div class="results-bar"><p id="result-count" role="status" aria-live="polite">正在加载目录…</p><button id="reset" class="reset-button" type="button">清除筛选</button></div><div id="load-error" class="error-box" role="alert" hidden></div><div id="list" class="file-list"></div>
+    </section>
+    <section class="contribute-card"><div><p class="eyebrow">持续补充</p><h2>给下一届同学多留一份资料</h2><p>后续找到往年试题时，可附上课程代码、考试年份、期中或期末类型与原始来源，通过对应课程仓库的 Issue 提供线索。资料核验后再加入此入口。</p></div><a class="button" href="index.html">查看课程与仓库 →</a></section>
+    <noscript><p class="notice">页面需要 JavaScript 读取试题目录。也可直接在对应 GitHub 仓库查看资料索引。</p></noscript>
+  </main>
+  <footer class="site-footer shell"><p>为当下学习整理，也为后来同学留一份参考。</p><p>资料版权归原作者所有 · 仅索引有来源证据的资料 · 考试要求以当年课程通知为准</p></footer>
+</body>
+</html>
